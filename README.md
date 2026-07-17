@@ -35,6 +35,10 @@
 
 </div>
 
+<p align="center">
+  <img src="assets/BayeSymX_logo.png" alt="Description" width="300">
+</p>
+
 ---
 
 ## Overview of the `BayeSym𝕏` model
