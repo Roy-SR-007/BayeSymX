@@ -31,7 +31,7 @@
   </a>
 </p>
 
-`BayeSym𝕏` searches over forests of symbolic expression trees, ranks symbolic models across independent parallel MCMC chains, and reports an Occam's widow set of learned equations. Based on Roy, S., Dey, P., Mallick, B. K., & Pati, D. *Probabilistic Symbolic Regression for Equation Discovery via Operato-induced and Regularized Symbolic Forests*. (2026+; <https://arxiv.org/abs/2509.19710>)
+`BayeSym𝕏` searches over forests of symbolic expression trees, ranks symbolic models across independent parallel MCMC chains, and reports an Occam's window set of learned equations. Based on Roy, S., Dey, P., Mallick, B. K., & Pati, D. *Probabilistic Symbolic Regression for Equation Discovery via Operator-induced and Regularized Symbolic Forests*. (2026+; <https://arxiv.org/abs/2509.19710>)
 
 </div>
 
@@ -72,12 +72,12 @@ where the symbolic tree prior $\Pi(\mathrm{T})$ is equipped with depth-dependent
 }}%%
 flowchart BT
     A["features: X"] --> B["symbolic forest"]
-    C["operators"] --> B
+    C["operators: O"] --> B
     D["depth-dependent<br/>split probability"] --> B
     E["operator/feature<br/>weights"] --> B
     F["Dirichlet concentration</br>hyperparameters"] --> E
     G["model regression<br/>hyperparameters"] --> H["model regression<br/>parameters"]
-    B --> I["y: target"]
+    B --> I["target: y"]
     H --> I
 ```
 
