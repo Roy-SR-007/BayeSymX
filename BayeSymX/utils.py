@@ -700,13 +700,43 @@ class Forest:
         Vn = np.linalg.inv(Vn_inv)
         beta_n = Vn @ (V0_inv @ beta0 + TXty)
         a_n = a0 + n
-        b_n = b0 + y @ y + beta0 @ V0_inv @ beta0 - beta_n @ Vn_inv @ beta_n
+        # b_n = b0 + y @ y + beta0 @ V0_inv @ beta0 - beta_n @ Vn_inv @ beta_n
+        # posterior_params = [beta_n, Vn, a_n, b_n]
+        # beta_post_mean = beta_n
+
+        # # Log-marginal likelihood/ log NIG normalizing constant
+        # log_det_Vn = np.linalg.slogdet(Vn)[1]
+        # log_marg_like = - 0.5 * a_n * np.log(b_n / 2) + gammaln(a_n / 2) + 0.5 * log_det_Vn 
+        # Numerically stable calculation of the posterior scale.
+        residual = y - TX @ beta_n
+        beta_difference = beta_n - beta0
+
+        b_n = float(
+            b0
+            + residual @ residual
+            + beta_difference @ V0_inv @ beta_difference
+        )
+
         posterior_params = [beta_n, Vn, a_n, b_n]
         beta_post_mean = beta_n
 
-        # Log-marginal likelihood/ log NIG normalizing constant
-        log_det_Vn = np.linalg.slogdet(Vn)[1]
-        log_marg_like = - 0.5 * a_n * np.log(b_n / 2) + gammaln(a_n / 2) + 0.5 * log_det_Vn 
+        sign_Vn, log_det_Vn = np.linalg.slogdet(Vn)
+
+        # Invalid proposals should receive zero posterior probability
+        # rather than generating warnings or being clipped.
+        if (
+            sign_Vn <= 0
+            or not np.isfinite(log_det_Vn)
+            or not np.isfinite(b_n)
+            or b_n <= 0.0
+        ):
+            log_marg_like = -np.inf
+        else:
+            log_marg_like = (
+                -0.5 * a_n * np.log(b_n / 2.0)
+                + gammaln(a_n / 2.0)
+                + 0.5 * log_det_Vn
+            )
         
         return log_marg_like, beta_post_mean, TX, posterior_params
     

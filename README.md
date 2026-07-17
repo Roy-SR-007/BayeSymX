@@ -210,7 +210,8 @@ results = json.loads(result_json)
 
 ### From symbolic tree structured expressions to compact scientific equations
 
-Explore the complete runnable workflows in **[`example.ipynb`](example.ipynb)**.
+Explore the complete runnable workflows in **[`example.ipynb`](example.ipynb)**. Data used for Feynman equation experiments is stored in **[`feynman_data`](feynman_data)**. The oxide perovskite catalyst dataset is recorded in **[`perovskites_data/processed_data.csv`](perovskites_data/processed_data.csv)**. Full results for Feynman equations and the oxide perovskite catalyst dataset are in **[`Feynman_Equations_Results.pdf`](Feynman_Equations_Results.pdf)** and 
+**[`Oxide_Perovskite_Results.pdf`](Oxide_Perovskite_Results.pdf)**, respectively.
 
 </div>
 
