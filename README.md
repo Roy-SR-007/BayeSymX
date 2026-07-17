@@ -108,7 +108,7 @@ flowchart LR
     B --> C["parallel<br/>MCMC chains"]
     C --> D["rank forests<br/>by log JMP"]
     D --> E["symbolic model<br/>refinement"]
-    E --> F["final expression"]
+    E --> F["Occam's window set<br/>of final expressions"]
     C --> G["posterior traces"]
 ```
 
