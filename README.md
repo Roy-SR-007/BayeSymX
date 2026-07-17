@@ -49,11 +49,11 @@ $$
 Each MCMC explored forest $\mathcal{T} = (T_1, \ldots, T_K)$ is scored by the joint marginal posterior (JMP) distribution over symbolic forests:
 
 $$
-\log \operatorname{JMP}(\mathcal{T})
-= \log \Pi(\mathcal{T}) + \log p(\bm{y} \mid \mathcal{T}, \bm{X}),
+\log \mathrm{JMP}(\mathcal{T})
+= \log \Pi(\mathcal{T}) + \log p(\boldsymbol{y} \mid \mathcal{T}, \boldsymbol{X}),
 $$
 
-where the symbolic tree prior $\Pi(\mathcal{T})$ is equipped with depth-dependent regularization to control symbolic expression complexity. Also, $p(\bm{y} \mid \mathcal{T}, \bm{X})$ is obtained after integrating out $(\bm{\beta}, \sigma^{2})$ with respect to their corresponding prior. The Dirichlet prior over operator and feature weight vectors of each tree enables data-adaptive learning of operator and feature preferences.
+where the symbolic tree prior $\Pi(\mathcal{T})$ is equipped with depth-dependent regularization to control symbolic expression complexity. Also, $p(\boldsymbol{y} \mid \mathcal{T}, \boldsymbol{X})$ is obtained after integrating out $(\boldsymbol{\beta}, \sigma^{2})$ with respect to their corresponding prior. The Dirichlet prior over operator and feature weight vectors of each tree enables data-adaptive learning of operator and feature preferences.
 
 ```mermaid
 %%{init: {
