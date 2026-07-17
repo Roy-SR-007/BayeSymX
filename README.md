@@ -415,3 +415,12 @@ result
 
 ---
 
+## Maintainers and developers
+
+**Copyright © 2026 `BayeSym𝕏` authors. All rights reserved.**
+
+[Somjit Roy](https://roy-sr-007.github.io/) and [Pritam Dey](https://pritamdey.github.io/).
+
+`BayeSym𝕏` is distributed under the terms of the [MIT License](LICENSE).
+
+---
